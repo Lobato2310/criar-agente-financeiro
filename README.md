@@ -250,10 +250,17 @@ Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalh
 ## 👤 Autor
 
 **Lucas Lobato**
-- GitHub: 
-- LinkedIn: 
-- Email: 
-
+<p align="left">
+  <a href="mailto:lucaslobsouza@gmail.com">
+    <img src="https://img.shields.io/badge/Email-333333?style=for-the-badge&logo=gmail&logoColor=white" />
+  </a>
+  <a href="https://www.linkedin.com/in/lucas-lobato-tech" target="_blank">
+    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
+  </a>
+  <a href="https://www.instagram.com/loobato_" target="_blank">
+    <img src="https://img.shields.io/badge/Instagram-222222?style=for-the-badge&logo=instagram&logoColor=white" />
+  </a>
+</p>
 ---
 
 ## 🙏 Agradecimentos
