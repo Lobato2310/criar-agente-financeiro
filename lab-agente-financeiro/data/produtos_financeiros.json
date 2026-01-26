@@ -1,0 +1,54 @@
+{
+  "produtos": [
+    {
+      "id": 1,
+      "nome": "Tesouro Selic",
+      "categoria": "Renda Fixa",
+      "rentabilidade_anual": "13.65%",
+      "liquidez": "Diária",
+      "risco": "Muito Baixo",
+      "investimento_minimo": 30.00,
+      "perfil_recomendado": ["Conservador", "Moderado", "Arrojado"]
+    },
+    {
+      "id": 2,
+      "nome": "CDB Liquidez Diária",
+      "categoria": "Renda Fixa",
+      "rentabilidade_anual": "100% do CDI",
+      "liquidez": "Diária",
+      "risco": "Baixo",
+      "investimento_minimo": 500.00,
+      "perfil_recomendado": ["Conservador", "Moderado"]
+    },
+    {
+      "id": 3,
+      "nome": "Fundo Multimercado",
+      "categoria": "Fundos",
+      "rentabilidade_anual": "15-18%",
+      "liquidez": "D+30",
+      "risco": "Médio",
+      "investimento_minimo": 1000.00,
+      "perfil_recomendado": ["Moderado", "Arrojado"]
+    },
+    {
+      "id": 4,
+      "nome": "Ações IBOV",
+      "categoria": "Renda Variável",
+      "rentabilidade_anual": "Variável",
+      "liquidez": "D+2",
+      "risco": "Alto",
+      "investimento_minimo": 100.00,
+      "perfil_recomendado": ["Arrojado"]
+    },
+    {
+      "id": 5,
+      "nome": "LCI/LCA",
+      "categoria": "Renda Fixa",
+      "rentabilidade_anual": "90% do CDI",
+      "liquidez": "Sem liquidez",
+      "risco": "Baixo",
+      "investimento_minimo": 5000.00,
+      "perfil_recomendado": ["Conservador", "Moderado"]
+    }
+  ]
+}

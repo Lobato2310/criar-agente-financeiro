@@ -1,0 +1,50 @@
+{
+  "cliente": {
+    "nome": "João Silva",
+    "idade": 32,
+    "profissao": "Analista de Sistemas",
+    "renda_mensal": 5500.00,
+    "estado_civil": "Solteiro",
+    "dependentes": 0
+  },
+  "perfil_investidor": {
+    "tipo": "Moderado",
+    "tolerancia_risco": "Média",
+    "objetivo_principal": "Aposentadoria",
+    "prazo": "Longo prazo (20+ anos)",
+    "conhecimento_mercado": "Intermediário"
+  },
+  "situacao_financeira": {
+    "reserva_emergencia": 8000.00,
+    "dividas": {
+      "total": 0,
+      "descricao": "Sem dívidas ativas"
+    },
+    "investimentos_atuais": {
+      "total": 25000.00,
+      "distribuicao": {
+        "renda_fixa": 15000.00,
+        "acoes": 8000.00,
+        "fundos": 2000.00
+      }
+    }
+  },
+  "objetivos": [
+    {
+      "descricao": "Comprar um carro",
+      "valor_alvo": 60000.00,
+      "prazo_meses": 36
+    },
+    {
+      "descricao": "Viagem internacional",
+      "valor_alvo": 15000.00,
+      "prazo_meses": 18
+    }
+  ],
+  "habitos_financeiros": {
+    "controla_gastos": true,
+    "poupa_mensalmente": true,
+    "percentual_poupanca": 20,
+    "usa_credito": "Raramente"
+  }
+}

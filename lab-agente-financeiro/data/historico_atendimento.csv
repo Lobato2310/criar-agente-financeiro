@@ -1,0 +1,5 @@
+data,tipo_atendimento,assunto,resumo,status
+2024-01-10,Chat,Dúvida sobre investimentos,Cliente perguntou sobre CDB vs Tesouro Selic,Resolvido
+2024-01-25,Telefone,Planejamento financeiro,Orientação sobre como montar reserva de emergência,Resolvido
+2024-02-05,Chat,Alerta de gastos,Cliente ultrapassou limite de gastos com alimentação,Resolvido
+2024-02-18,Email,Sugestão de investimento,Recomendação de diversificação da carteira,Em andamento

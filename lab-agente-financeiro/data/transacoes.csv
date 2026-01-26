@@ -1,0 +1,21 @@
+data,categoria,descricao,valor,tipo
+2024-01-05,Alimentação,Supermercado Extra,-450.00,debito
+2024-01-08,Transporte,Uber,-35.50,debito
+2024-01-10,Saúde,Farmácia Pacheco,-89.90,debito
+2024-01-12,Lazer,Netflix,-49.90,debito
+2024-01-15,Salário,Depósito Salário,5500.00,credito
+2024-01-18,Alimentação,Restaurante Japonês,-180.00,debito
+2024-01-20,Educação,Curso Online DIO,-197.00,debito
+2024-01-22,Moradia,Aluguel,-1800.00,debito
+2024-01-25,Transporte,Combustível Posto Shell,-250.00,debito
+2024-01-28,Lazer,Cinema,-80.00,debito
+2024-02-01,Moradia,Conta de Luz,-180.50,debito
+2024-02-03,Alimentação,iFood,-95.00,debito
+2024-02-05,Saúde,Academia SmartFit,-99.90,debito
+2024-02-08,Transporte,Uber,-42.30,debito
+2024-02-10,Compras,Magazine Luiza,-320.00,debito
+2024-02-15,Salário,Depósito Salário,5500.00,credito
+2024-02-18,Alimentação,Padaria,-65.00,debito
+2024-02-20,Lazer,Spotify,-21.90,debito
+2024-02-22,Moradia,Aluguel,-1800.00,debito
+2024-02-25,Saúde,Consulta Médica,-250.00,debito
