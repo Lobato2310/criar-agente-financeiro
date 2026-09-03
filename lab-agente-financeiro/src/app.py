@@ -214,7 +214,6 @@ def main():
     
     # Input do usuário
     if prompt := st.chat_input("Digite sua mensagem..."):
-        # Adicionar mensagem do usuário
         st.session_state.messages.append({"role": "user", "content": prompt})
         with st.chat_message("user"):
             st.markdown(prompt)
@@ -224,12 +223,18 @@ def main():
         
         # Gerar resposta
         with st.chat_message("assistant"):
-            with st.spinner("Pensando..."):
-                response = chat_with_ai(prompt, contexto, st.session_state.messages[:-1])
-                st.markdown(response)
-        
-        # Adicionar resposta ao histórico
-        st.session_state.messages.append({"role": "assistant", "content": response})
+            try:
+                response = client.chat.completions.create(
+                    model="gemini-2.5-flash",
+                    messages=st.session_state.messages
+                )
+                resposta_ia = response.choices[0].message.content
+                st.markdown(resposta_ia)
+            
+                st.session_state.messages.append({"role": "assistant", "content": resposta_ia})
+            
+            except Exception as e:
+                st.error(f"Desculpe, ocorreu um erro ao gerar a resposta: {e}")
     
     # Botões de ações rápidas
     st.divider()
