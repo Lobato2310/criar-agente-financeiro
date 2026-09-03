@@ -131,21 +131,22 @@ def chat_with_ai(mensagem_usuario, contexto_cliente, historico_conversa):
     try:
         # Preparar mensagens
         messages = [
-            {"role": "system", "content": SYSTEM_PROMPT},
-            {"role": "system", "content": f"CONTEXTO DO CLIENTE:\n{contexto_cliente}"}
+            {"role": "system", "content": "Você é um assistente financeiro."},
+            {"role": "user", "content": prompt}  
         ]
         
         # Adicionar histórico
         messages.extend(historico_conversa)
         
-        # Adicionar mensagem do usuário
-        messages.append({"role": "system", "content": "Você é um assistente financeiro."},
-        {"role": "user", "content": prompt})
+
         
         # Chamar API
         response = client.chat.completions.create(
             model="gemini-2.5-flash",
-            messages=messages,
+            messages=[
+            {"role": "system", "content": "Você é um assistente financeiro."},
+            {"role": "user", "content": prompt}
+        ]
             temperature=0.7,
             max_tokens=1000
         )
