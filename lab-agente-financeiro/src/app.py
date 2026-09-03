@@ -49,7 +49,7 @@ client = init_openai()
 
 ROOT_DIR = Path(__file__).resolve().parent.parent
 DATA_PATH = ROOT_DIR / "data" / "transacoes.csv"
-
+PERFIL_PATH = ROOT_DIR / "data" / "perfil_investidor.json"
 
 # Carregar dados
 @st.cache_data
