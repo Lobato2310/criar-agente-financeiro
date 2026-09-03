@@ -3,6 +3,8 @@
 > Assistente virtual proativo para planejamento financeiro e controle de gastos, desenvolvido com OpenAI GPT-4 e Streamlit.
 
 ---
+> ⚠️ **Nota sobre as chamadas de IA:**
+> A funcionalidade de interação com a LLM está temporariamente pausada devido à expiração dos créditos da API da OpenAI. As demais rotas e funcionalidades do projeto seguem operacionais. O projeto será atualizado em breve para integrar uma solução de LLM com camada gratuita (ex: Groq / Google Gemini).
 
 ## 🎯 Sobre o Projeto
 
