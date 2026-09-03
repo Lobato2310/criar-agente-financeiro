@@ -235,7 +235,7 @@ def main():
                 st.warning("Modelo principal indisponível no momento. Redirecionando para modelo secundário...")
                 try:
                     response = client.models.generate_content(
-                        model="gemini-1.5-flash",
+                        model="gemini-3.6-flash",
                         contents=prompt
                     )
                     resposta_ia = response.text
