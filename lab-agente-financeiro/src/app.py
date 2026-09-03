@@ -48,26 +48,28 @@ client = init_openai()
 
 
 ROOT_DIR = Path(__file__).resolve().parent.parent
-DATA_PATH = ROOT_DIR / "data" / "transacoes.csv"
+TRAN_PATH = ROOT_DIR / "data" / "transacoes.csv"
 PERFIL_PATH = ROOT_DIR / "data" / "perfil_investidor.json"
+HIST_PATH = ROOT_DIR / "data" / "historico_atendimento.csv"
+PROD_PATH = ROOT_DIR / "data" / "produtos_financeiros.json"
 
 # Carregar dados
 @st.cache_data
 def load_data():
     try:
         # Transações
-        transacoes = pd.read_csv(DATA_PATH)
+        transacoes = pd.read_csv(TRAN_PATH)
         
         # Perfil do investidor
         with open('data/perfil_investidor.json', 'r', encoding='utf-8') as f:
             perfil = json.load(f)
         
         # Produtos financeiros
-        with open('data/produtos_financeiros.json', 'r', encoding='utf-8') as f:
+        with open(PROD_PATH, "r", encoding="utf-8") as f:
             produtos = json.load(f)
         
         # Histórico de atendimento
-        historico = pd.read_csv('data/historico_atendimento.csv')
+        historico = pd.read_csv(HIST_PATH)
         
         return transacoes, perfil, produtos, historico
     except Exception as e:
