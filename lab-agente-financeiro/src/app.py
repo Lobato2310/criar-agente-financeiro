@@ -146,7 +146,7 @@ def chat_with_ai(mensagem_usuario, contexto_cliente, historico_conversa):
             messages= [
             {"role": "system", "content": "Você é um assistente financeiro."},
             {"role": "user", "content": prompt}
-        ]
+            ]
             temperature=0.7,
             max_tokens=1000
         )
