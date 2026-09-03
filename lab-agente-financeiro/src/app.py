@@ -19,8 +19,13 @@ st.set_page_config(
 
 @st.cache_resource
 def init_gemini():
-    api_key = os.getenv("GEMINI_API_KEY") or st.secrets.get("GEMINI_API_KEY")
-    
+    api_key = os.getenv("GEMINI_API_KEY")
+    if not api_key:
+        try:
+            api_key = st.secrets["GEMINI_API_KEY"]
+        except Exception:
+            pass
+            
     if not api_key:
         st.error("⚠️ **API Key do Gemini não encontrada!**")
         st.stop()
@@ -218,17 +223,13 @@ def main():
         with st.chat_message("user"):
             st.markdown(prompt)
         
-        # Criar contexto
-        contexto = criar_contexto_cliente(transacoes, perfil, produtos, historico)
-        
-        # Gerar resposta
         with st.chat_message("assistant"):
             try:
-                response = client.chat.completions.create(
+                response = client.models.generate_content(
                     model="gemini-2.5-flash",
-                    messages=st.session_state.messages
+                    contents=prompt
                 )
-                resposta_ia = response.choices[0].message.content
+                resposta_ia = response.text
                 st.markdown(resposta_ia)
             
                 st.session_state.messages.append({"role": "assistant", "content": resposta_ia})
