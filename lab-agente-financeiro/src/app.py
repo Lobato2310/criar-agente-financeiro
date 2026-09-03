@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import json
-from openai import OpenAI
+from google import genai
 from datetime import datetime
 import os
 from dotenv import load_dotenv
@@ -17,34 +17,17 @@ st.set_page_config(
     layout="wide"
 )
 
-# Inicializar cliente OpenAI
 @st.cache_resource
-def init_openai():
-    # Tenta pegar do .env primeiro
-    api_key = os.getenv("OPENAI_API_KEY")
+def init_gemini():
+    api_key = os.getenv("GEMINI_API_KEY") or st.secrets.get("GEMINI_API_KEY")
     
-    # Se não encontrar no .env, tenta secrets do Streamlit
     if not api_key:
-        try:
-            api_key = st.secrets["OPENAI_API_KEY"]
-        except:
-            pass
-    
-    # Se ainda não tiver, mostra erro
-    if not api_key:
-        st.error("""
-        ⚠️ **API Key da OpenAI não encontrada!**
-        
-        Verifique se o arquivo `.env` existe na raiz do projeto com:
-```
-        OPENAI_API_KEY=sk-proj-sua-chave-aqui
-```
-        """)
+        st.error("⚠️ **API Key do Gemini não encontrada!**")
         st.stop()
-    
-    return OpenAI(api_key=api_key)
+        
+    return genai.Client(api_key=api_key)
 
-client = init_openai()
+client = init_gemini()
 
 
 ROOT_DIR = Path(__file__).resolve().parent.parent
@@ -156,11 +139,12 @@ def chat_with_ai(mensagem_usuario, contexto_cliente, historico_conversa):
         messages.extend(historico_conversa)
         
         # Adicionar mensagem do usuário
-        messages.append({"role": "user", "content": mensagem_usuario})
+        messages.append({"role": "system", "content": "Você é um assistente financeiro."},
+        {"role": "user", "content": prompt})
         
         # Chamar API
         response = client.chat.completions.create(
-            model="gpt-4o-mini",
+            model="gemini-2.5-flash",
             messages=messages,
             temperature=0.7,
             max_tokens=1000
