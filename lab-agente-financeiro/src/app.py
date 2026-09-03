@@ -235,6 +235,14 @@ def main():
                 st.session_state.messages.append({"role": "assistant", "content": resposta_ia})
             
             except Exception as e:
+                st.warning("Modelo principal ocupado, redirecionando para modelo secundário...")
+                response = client.chat.completions.create(
+                    model="gemini-2.0-flash",
+                    messages=st.session_state.messages
+                )
+                resposta_ia = response.choices[0].message.content
+            st.markdown(resposta_ia)
+            st.session_state.messages.append({"role": "assistant", "content": resposta_ia})
                 st.error(f"Desculpe, ocorreu um erro ao gerar a resposta: {e}")
     
     # Botões de ações rápidas
