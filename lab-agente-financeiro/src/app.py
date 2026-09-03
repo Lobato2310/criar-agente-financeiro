@@ -5,6 +5,7 @@ from openai import OpenAI
 from datetime import datetime
 import os
 from dotenv import load_dotenv
+from pathlib import Path
 
 # Configuração da página
 load_dotenv()  # ← ADICIONAR ESTA LINHA
@@ -45,12 +46,17 @@ def init_openai():
 
 client = init_openai()
 
+
+ROOT_DIR = Path(__file__).resolve().parent.parent
+DATA_PATH = ROOT_DIR / "data" / "transacoes.csv"
+
+
 # Carregar dados
 @st.cache_data
 def load_data():
     try:
         # Transações
-        transacoes = pd.read_csv('data/transacoes.csv')
+        transacoes = pd.read_csv(DATA_PATH)
         
         # Perfil do investidor
         with open('data/perfil_investidor.json', 'r', encoding='utf-8') as f:
