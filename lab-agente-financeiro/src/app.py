@@ -147,7 +147,7 @@ def chat_with_ai(mensagem_usuario, contexto_cliente, historico_conversa):
         
         # Chamar API
         response = client.chat.completions.create(
-            model="gemini-2.0-flash-lite",
+            model="gemini-3.8-flash",
             messages= [
             {"role": "system", "content": "Você é um assistente financeiro."},
             {"role": "user", "content": prompt}
@@ -226,7 +226,7 @@ def main():
         with st.chat_message("assistant"):
             try:
                 response = client.models.generate_content(
-                    model="gemini-2.0-flash-lite",
+                    model="gemini-3.8-flash",
                     contents=prompt
                 )
                 resposta_ia = response.text
@@ -235,7 +235,7 @@ def main():
                 st.warning("Modelo principal indisponível no momento. Redirecionando para modelo secundário...")
                 try:
                     response = client.models.generate_content(
-                        model="gemini-3.6-flash",
+                        model="gemini-3.5-flash-lite",
                         contents=prompt
                     )
                     resposta_ia = response.text
