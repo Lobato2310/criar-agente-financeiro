@@ -225,25 +225,25 @@ def main():
         
         with st.chat_message("assistant"):
             try:
-                response = client.chat.completions.create(
+                response = client.models.generate_content(
                     model="gemini-2.0-flash",
-                    messages=st.session_state.messages
+                    contents=prompt
                 )
-                resposta_ia = response.choices[0].message.content
-    
+                resposta_ia = response.text
+        
             except Exception as e:
                 st.warning("Modelo principal indisponível no momento. Redirecionando para modelo secundário...")
                 try:
-                    response = client.chat.completions.create(
+                    response = client.models.generate_content(
                         model="gemini-1.5-flash",
-                        messages=st.session_state.messages
+                        contents=prompt
                     )
-                    resposta_ia = response.choices[0].message.content
+                    resposta_ia = response.text
                 except Exception as err:
-                    st.error(f"Desculpe, ocorreu um erro ao gerar a resposta: {err}")
+                    st.error(f"Desculpe, ocorreu um erro ao gerar a resposta em ambos os modelos: {err}")
                     st.stop()
         
-            # Exibe e salva a resposta apenas uma vez ao final
+            # Exibe e salva no histórico apenas uma vez ao final
             st.markdown(resposta_ia)
             st.session_state.messages.append({"role": "assistant", "content": resposta_ia})
     
