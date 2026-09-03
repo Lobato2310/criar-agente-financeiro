@@ -61,7 +61,7 @@ def load_data():
         transacoes = pd.read_csv(TRAN_PATH)
         
         # Perfil do investidor
-        with open('data/perfil_investidor.json', 'r', encoding='utf-8') as f:
+        with open(PERFIL_PATH, 'r', encoding='utf-8') as f:
             perfil = json.load(f)
         
         # Produtos financeiros
