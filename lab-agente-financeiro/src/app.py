@@ -235,9 +235,9 @@ def main():
                     )
                     resposta_ia = response.text
                     
-            except Exception as err:
-                st.error(f"Desculpe, ocorreu um erro ao gerar a resposta: {err}")
-                st.stop()
+                except Exception as err:
+                    st.error(f"Desculpe, ocorreu um erro ao gerar a resposta: {err}")
+                    st.stop()
 
             st.markdown(resposta_ia)
             st.session_state.messages.append(
