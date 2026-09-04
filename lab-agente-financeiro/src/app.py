@@ -235,21 +235,21 @@ def main():
                     )
                     resposta_ia = response.text
 
-                except Exception as e:
-                    try:
-                        response = client.models.generate_content(
-                            model="gemini-2.5-flash",
-                            contents=formatted_contents,
-                            config=types.GenerateContentConfig(
-                                system_instruction=system_instruction_completa,
-                                temperature=0.2,
-                            ),
-                        )
-                        resposta_ia = response.text
+            except Exception as e:
+                try:
+                    response = client.models.generate_content(
+                        model="gemini-2.5-flash",
+                        contents=formatted_contents,
+                        config=types.GenerateContentConfig(
+                            system_instruction=system_instruction_completa,
+                            temperature=0.2,
+                        ),
+                    )
+                    resposta_ia = response.text
                     
-                except Exception as err:
-                    st.error(f"Desculpe, ocorreu um erro ao gerar a resposta: {err}")
-                    st.stop()
+            except Exception as err:
+                st.error(f"Desculpe, ocorreu um erro ao gerar a resposta: {err}")
+                st.stop()
 
             st.markdown(resposta_ia)
             st.session_state.messages.append(
