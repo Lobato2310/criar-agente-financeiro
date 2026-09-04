@@ -196,7 +196,7 @@ def main():
         st.session_state.messages.append({"role": "user", "content": prompt})
         st.rerun()
 
-    if st.session_state.messages add st.session_state.messages[-1]["role"] == "user"
+    if st.session_state.messages and st.session_state.messages[-1]["role"] == "user"
         with st.chat_message("assistant"):
             try:
                 system_instruction_completa = construir_system_instruction()
