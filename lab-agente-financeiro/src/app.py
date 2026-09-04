@@ -213,7 +213,7 @@ def main():
                     )
 
                 response = client.models.generate_content(
-                    model="gemini-2.5-flash",
+                    model="gemini-3-flash-preview",
                     contents=formatted_contents,
                     config=types.GenerateContentConfig(
                         system_instruction=system_instruction_completa,
@@ -226,7 +226,7 @@ def main():
                 try:
                     # Fallback secundário em caso de oscilação do modelo principal
                     response = client.models.generate_content(
-                        model="gemini-3.5-flash-lite",
+                        model="gemini-3-flash-preview",
                         contents=formatted_contents,
                         config=types.GenerateContentConfig(
                             system_instruction=system_instruction_completa,
@@ -251,7 +251,7 @@ def main():
     col1, col2, col3, col4 = st.columns(4)
 
     with col1:
-        if st.button("📊 Analisar Gastos"):
+        if st.button("Analisar Gastos"):
             st.session_state.messages.append(
                 {
                     "role": "user",
