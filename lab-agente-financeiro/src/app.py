@@ -213,7 +213,7 @@ def main():
                     )
 
                 response = client.models.generate_content(
-                    model="gemini-3.5-flash-lite",
+                    model="gemini-3-flash-preview",
                     contents=formatted_contents,
                     config=types.GenerateContentConfig(
                         system_instruction=system_instruction_completa,
@@ -226,7 +226,7 @@ def main():
                 try:
                     # Fallback secundário em caso de oscilação do modelo principal
                     response = client.models.generate_content(
-                        model="gemini-3-flash-preview",
+                        model="gemini-3.1-flash-lite",
                         contents=formatted_contents,
                         config=types.GenerateContentConfig(
                             system_instruction=system_instruction_completa,
