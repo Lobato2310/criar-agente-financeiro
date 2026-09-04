@@ -194,9 +194,9 @@ def main():
     # Chat Input
     if prompt := st.chat_input("Digite sua mensagem..."):
         st.session_state.messages.append({"role": "user", "content": prompt})
-        with st.chat_message("user"):
-            st.markdown(prompt)
+        st.rerun()
 
+    if st.session_state.messages add st.session_state.messages[-1]["role"] == "user"
         with st.chat_message("assistant"):
             try:
                 system_instruction_completa = construir_system_instruction()
@@ -235,15 +235,14 @@ def main():
                     )
                     resposta_ia = response.text
                 except Exception as err:
-                    st.error(
-                        f"Desculpe, ocorreu um erro ao gerar a resposta: {err}"
-                    )
+                    st.error(f"Desculpe, ocorreu um erro ao gerar a resposta: {err}")
                     st.stop()
 
             st.markdown(resposta_ia)
             st.session_state.messages.append(
                 {"role": "assistant", "content": resposta_ia}
             )
+            st.rerun()
 
     # Ações rápidas
     st.divider()
