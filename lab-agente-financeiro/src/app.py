@@ -122,7 +122,7 @@ def main():
 
     transacoes, perfil, produtos, historico = load_data()
 
-    if transacoes is None:
+    if transacoes is None or perfil is None:
         st.error("Não foi possível carregar os dados. Verifique a pasta 'data/'")
         return
 
