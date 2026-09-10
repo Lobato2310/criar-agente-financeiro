@@ -41,7 +41,7 @@ O agente financeiro utiliza IA Generativa para:
 
 - **Python 3.10+** (com `pathlib` para manipulação segura de caminhos)
 - **Streamlit** - Interface web e gerenciamento de estado
-- **Google Gemini API / Groq** - Provedor de LLM de alto desempenho
+- **Google Gemini API** (`google-genai`) - Provedor de LLM
 - **Pandas** - Análise e manipulação de dados
 - **JSON & CSV** - Estruturação de dados locais e base de conhecimento
 
@@ -51,7 +51,7 @@ O agente financeiro utiliza IA Generativa para:
 
 ### 1. Clone o repositório
 ```bash
-git clone [https://github.com/Lobato2310/criar-agente-financeiro.git](https://github.com/Lobato2310/criar-agente-financeiro.git)
+git clone https://github.com/Lobato2310/criar-agente-financeiro.git
 cd lab-agente-financeiro
 
 2. Crie e ative um ambiente virtual
@@ -86,7 +86,7 @@ lab-agente-financeiro/
 │   ├── transacoes.csv               # Histórico de transações
 │   ├── perfil_investidor.json       # Perfil do cliente
 │   ├── produtos_financeiros.json    # Catálogo de produtos
-│   └── historico_atendimento.csv    # Histórico de atendimentos
+│   └── historico_atendimento.csv    # Reservado para uso futuro (não incluído no contexto por decisão de performance)
 │
 ├── docs/                            # Documentação do projeto
 │   ├── 01-documentacao-agente.md    # Caso de uso e arquitetura
